@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+
+    <Button
+        android:id="@+id/add_child_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:padding="15dp"
+        android:text="Add child"
+        android:textColor="#FFF" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/child_name_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp">
+
+        <EditText
+            android:id="@+id/input_childname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter child phone"
+            android:inputType="phone" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/search_child_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        android:text="search child"
+        android:textColor="#FFF" />
+
+
+</LinearLayout>

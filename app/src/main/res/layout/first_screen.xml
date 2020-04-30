@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="25dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:text="Who are you?"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="#fff" />
+
+
+    <Button
+        android:id="@+id/parent_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Parent"
+        android:textColor="#fff" />
+
+
+    <Button
+        android:id="@+id/child_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#fff"
+        android:text="Child"
+        android:textColor="@color/colorAccent" />
+
+</LinearLayout>

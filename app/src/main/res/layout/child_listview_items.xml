@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/list_child_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        android:text="asdasdasdsa"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/list_child_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textStyle="normal"
+        android:text="9891951651"
+        android:textAllCaps="true"/>
+
+    <TextView
+        android:id="@+id/list_child_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textStyle="normal"
+        android:text="asdsad@sdf.com"
+        android:textAllCaps="true"/>
+
+
+</LinearLayout>

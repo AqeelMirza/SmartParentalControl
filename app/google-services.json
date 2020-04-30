@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "196817638036",
+    "firebase_url": "https://smartparentalcontrol-529aa.firebaseio.com",
+    "project_id": "smartparentalcontrol-529aa",
+    "storage_bucket": "smartparentalcontrol-529aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196817638036:android:35bd2b4bfe4c8cdad21a81",
+        "android_client_info": {
+          "package_name": "com.spc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196817638036-u2h73fvuitbbji6dq8sidhniqnua48vk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDm3prjJmzd7q6AMebMZ9vM1z2Czb1Xv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196817638036-u2h73fvuitbbji6dq8sidhniqnua48vk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
