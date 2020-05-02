@@ -131,8 +131,15 @@ public class View_Child_Details_Activity extends AppCompatActivity {
                             }
                             double lat = Double.parseDouble(latitude);
                             double lon = Double.parseDouble(longitude);
-                            String uri = String.format(Locale.ENGLISH, "geo:%f,%f", lat, lon);
+                           /* String uri = String.format(Locale.ENGLISH, "geo:%f,%f", lat, lon);
                             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                            intent.setPackage("com.google.android.apps.maps");
+                            startActivity(intent);*/
+
+
+                            String uri = "http://maps.google.com/maps?daddr=" + lat + "," + lon + " (" + "Child at" + ")";
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                            intent.setPackage("com.google.android.apps.maps");
                             startActivity(intent);
 
                         }

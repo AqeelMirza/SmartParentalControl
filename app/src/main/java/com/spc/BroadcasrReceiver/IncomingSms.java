@@ -41,7 +41,7 @@ public class IncomingSms extends BroadcastReceiver {
 
                         SharedPreferences prefs = context.getSharedPreferences("Number_Pref", 0);
                         String parent_phone = prefs.getString("parent_phone", null);
-
+                        senderNo = senderNo.replace("+61", "0");
                         if (parent_phone != null && PhoneNumberUtils.compare(context, senderNo, parent_phone)) {
                             {
                                 profilechange(context, message);
