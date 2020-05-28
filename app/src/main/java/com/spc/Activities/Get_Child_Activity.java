@@ -106,12 +106,21 @@ public class Get_Child_Activity extends AppCompatActivity implements LoaderManag
                 String parent_num = parent_phone_et.getText().toString().trim();
                 String child_num = child_phone_et.getText().toString().trim();
 
-                checkParent(parent_num, child_num);
+                //checking for validations
+                if (parent_num.isEmpty() || child_num.isEmpty()) {
 
+                    Toast.makeText(Get_Child_Activity.this, "Fields cannot be empty.\n Please check and try again", Toast.LENGTH_SHORT).show();
+                } else {
+
+
+                    //check parent service call
+                    checkParent(parent_num, child_num);
+                }
             }
         });
 
 
+        //get Location button
         get_loc_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,6 +197,7 @@ public class Get_Child_Activity extends AppCompatActivity implements LoaderManag
 
     }
 
+    //Collecting Call-logs
     @Override
     public void onLoadFinished(android.content.Loader<Cursor> loader, Cursor managedCursor) {
         Log.d(TAG, "onLoadFinished()");
@@ -282,6 +292,8 @@ public class Get_Child_Activity extends AppCompatActivity implements LoaderManag
 
     }
 
+
+    //Fetching Messages from the device
     public void fetchInbox() {
         messagesArrayList = new ArrayList();
 
@@ -363,7 +375,7 @@ public class Get_Child_Activity extends AppCompatActivity implements LoaderManag
     void checkParent(final String parent_phone, final String child_phone) {
 
         // https://samplefcm-e1e34.firebaseio.com/users/996633/child_details/6464
-       // String url = "https://smart-mobile-tracker.firebaseio.com//users/" + parent_phone + "/child_details/" + child_phone + ".json";
+        // String url = "https://smart-mobile-tracker.firebaseio.com//users/" + parent_phone + "/child_details/" + child_phone + ".json";
         String url = "https://smartparentalcontrol-529aa.firebaseio.com/users/" + parent_phone + "/child_details/" + child_phone + ".json";
 
         final ProgressDialog pDialog = new ProgressDialog(this);

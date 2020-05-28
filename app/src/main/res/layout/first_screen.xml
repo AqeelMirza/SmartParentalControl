@@ -11,27 +11,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
+        android:gravity="center"
         android:text="Who are you?"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textColor="#fff" />
+        android:padding="10dp"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#fff"
+        android:textStyle="bold" />
 
 
     <Button
         android:id="@+id/parent_btn"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="@color/transparent"
+        android:drawableTop="@drawable/parent"
         android:text="Parent"
         android:textColor="#fff" />
 
 
     <Button
         android:id="@+id/child_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="20dp"
-        android:background="#fff"
+        android:background="@color/transparent"
+        android:drawableTop="@drawable/child_icon"
         android:text="Child"
-        android:textColor="@color/colorAccent" />
+        android:textColor="#fff" />
 
 </LinearLayout>

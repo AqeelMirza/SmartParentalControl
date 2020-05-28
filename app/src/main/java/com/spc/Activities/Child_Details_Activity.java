@@ -54,9 +54,9 @@ public class Child_Details_Activity extends AppCompatActivity {
         // get reference to 'users' node
         mFirebaseDatabase = mFirebaseInstance.getReference("users");
 
+        //getting the value from previous fragment
         addchild = getIntent().getBooleanExtra("addchild", false);
-
-
+        //initialising the SharedPref
         editor = getSharedPreferences("isParentCreated_Pref", MODE_PRIVATE).edit();
 
 
@@ -88,6 +88,8 @@ public class Child_Details_Activity extends AppCompatActivity {
             create_btn.setVisibility(View.VISIBLE);
         }
 
+
+        //Create new child when button pressed
         create_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,34 +98,40 @@ public class Child_Details_Activity extends AppCompatActivity {
                 phone = child_phone.getText().toString().trim();
                 email = child_email.getText().toString().trim();
 
-                HashMap<String, ArrayList<Call_Logs>> child_calls_map = new HashMap();
-                child_calls_map.put("Call_Logs", call_logsArrayList);
+                if (name.isEmpty() || phone.isEmpty() || email.isEmpty()) {
+                    Toast.makeText(Child_Details_Activity.this, "Please check the details and try again.", Toast.LENGTH_SHORT).show();
 
-                HashMap<String, ArrayList<Messages>> child_msgs_map = new HashMap();
-                child_msgs_map.put("Messages_List", messagesArrayList);
+                } else {
 
-                HashMap<String, ArrayList<Location_Model>> child_loc_map = new HashMap();
-                child_loc_map.put("Location_List", locationArrayList);
+                    HashMap<String, ArrayList<Call_Logs>> child_calls_map = new HashMap();
+                    child_calls_map.put("Call_Logs", call_logsArrayList);
+
+                    HashMap<String, ArrayList<Messages>> child_msgs_map = new HashMap();
+                    child_msgs_map.put("Messages_List", messagesArrayList);
+
+                    HashMap<String, ArrayList<Location_Model>> child_loc_map = new HashMap();
+                    child_loc_map.put("Location_List", locationArrayList);
 
 
-                child_model = new Child(name, phone, email, child_calls_map, child_msgs_map, child_loc_map);
+                    child_model = new Child(name, phone, email, child_calls_map, child_msgs_map, child_loc_map);
 
-                HashMap<String, Child> child_map = new HashMap();
-                child_map.put(phone, child_model);
+                    HashMap<String, Child> child_map = new HashMap();
+                    child_map.put(phone, child_model);
 
-                parent_model = new Parent(parent_name, parent_phone, parent_password, child_map);
+                    parent_model = new Parent(parent_name, parent_phone, parent_password, child_map);
 
-                mFirebaseDatabase.child(parent_phone).setValue(parent_model);
+                    mFirebaseDatabase.child(parent_phone).setValue(parent_model);
 
-                Toast.makeText(Child_Details_Activity.this, "parent created successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Child_Details_Activity.this, "parent created successfully", Toast.LENGTH_SHORT).show();
 
-                editor.putBoolean("isParent", true);
-                editor.putString("parent_name", parent_name);
-                editor.putString("parent_phone", parent_phone);
-                editor.commit();
+                    editor.putBoolean("isParent", true);
+                    editor.putString("parent_name", parent_name);
+                    editor.putString("parent_phone", parent_phone);
+                    editor.commit();
 
-                Intent i = new Intent(Child_Details_Activity.this, Login.class);
-                startActivity(i);
+                    Intent i = new Intent(Child_Details_Activity.this, Login.class);
+                    startActivity(i);
+                }
             }
         });
 

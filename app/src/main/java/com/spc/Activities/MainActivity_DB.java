@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -81,11 +82,18 @@ public class MainActivity_DB extends AppCompatActivity {
                 String email = inputEmail.getText().toString();
                 String password_str = password.getText().toString().trim();
 
-                // Check for already existed userId
-                if (TextUtils.isEmpty(userId)) {
-                    createUser(name, email, password_str);
+                if (name.isEmpty() || email.isEmpty() || password_str.isEmpty()) {
+                    Toast.makeText(MainActivity_DB.this, "Fields cannot be empty. \nPlease check and try again.", Toast.LENGTH_SHORT).show();
+
                 } else {
-                    updateUser(name, email);
+
+
+                    // Check for already existed userId
+                    if (TextUtils.isEmpty(userId)) {
+                        createUser(name, email, password_str);
+                    } else {
+                        updateUser(name, email);
+                    }
                 }
             }
         });

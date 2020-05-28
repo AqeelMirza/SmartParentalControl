@@ -6,9 +6,16 @@
     android:orientation="vertical"
     android:padding="10dp">
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/connectkid_logo"></ImageView>
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="15dp">
 
         <EditText
             android:id="@+id/login_phone"
@@ -16,16 +23,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:ems="10"
-            android:maxLength="10"
             android:hint="Phone Number"
             android:inputType="phone"
+            android:maxLength="10"
             android:maxLines="1"
             android:padding="10dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="15dp">
 
         <EditText
             android:id="@+id/login_password"
@@ -43,17 +51,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:background="@color/colorAccent"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/rounded_button"
         android:text="login"
         android:textColor="#fff" />
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="If you are a new user"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#000" />
 
     <Button
         android:id="@+id/login_newuser_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/rounded_button2"
         android:text="New User"
         android:textColor="#fff" />
 

@@ -64,7 +64,12 @@ public class Search_Child extends AppCompatActivity {
             public void onClick(View v) {
 
                 String num = child_phnum.getText().toString();
-                getChildDetails(parentphone, num);
+
+                if (num.isEmpty()) {
+
+                    Toast.makeText(Search_Child.this, "Please check the number and try again.", Toast.LENGTH_SHORT).show();
+                } else
+                    getChildDetails(parentphone, num);
 
             }
         });
@@ -72,6 +77,7 @@ public class Search_Child extends AppCompatActivity {
 
     }
 
+    //search child details
     void getChildDetails(final String parent_num, final String num) {
 
 //https://samplefcm-e1e34.firebaseio.com/users/Aqeel Mirza/child_details

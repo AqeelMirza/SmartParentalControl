@@ -11,17 +11,27 @@
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-
-    <Button
-        android:id="@+id/add_child_btn"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorAccent"
-        android:padding="15dp"
-        android:text="Add child"
-        android:textColor="#FFF" />
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="Welcome!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:textColor="#000"
+        android:text="You can now connect with your Child"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
+
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/child_name_layout"
@@ -33,20 +43,44 @@
             android:id="@+id/input_childname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter child phone"
+            android:hint="Enter the child's phone number"
             android:inputType="phone" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/search_child_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@color/colorPrimary"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/rounded_button"
         android:padding="10dp"
         android:text="search child"
         android:textColor="#FFF" />
 
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:textColor="#000"
+        android:text="If you want to add new Child, click the button below"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/add_child_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_button2"
+        android:padding="15dp"
+        android:text="Add child"
+        android:textColor="#FFF" />
 
 </LinearLayout>

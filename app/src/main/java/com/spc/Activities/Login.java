@@ -62,7 +62,13 @@ public class Login extends AppCompatActivity {
                 String phonestr = phone.getText().toString();
                 String password_str = password.getText().toString().trim();
 
-                loginService(phonestr, password_str);
+                if (phonestr.isEmpty() || password_str.isEmpty()) {
+
+                    Toast.makeText(Login.this, "Fields cannot be Empty. \n Please check and try again", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    loginService(phonestr, password_str);
 
              /*   // Read from the database
                 myRef.addValueEventListener(new ValueEventListener() {
@@ -81,16 +87,16 @@ public class Login extends AppCompatActivity {
                     }
                 });*/
 
-
+                }
             }
         });
 
     }
 
+
+    //Login webservice call
     void loginService(String phone, final String password) {
 
-
-        //String url = "https://smart-mobile-tracker.firebaseio.com//users/" + phone + ".json";
         String url = "https://smartparentalcontrol-529aa.firebaseio.com/users/" + phone + ".json";
 
         final ProgressDialog pDialog = new ProgressDialog(this);

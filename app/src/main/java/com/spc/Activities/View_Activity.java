@@ -62,6 +62,8 @@ public class View_Activity extends AppCompatActivity {
 
     }
 
+
+    //retriving call-logs
     void Get_Call_logs(String parent_num, String num) {
 
         //https://samplefcm-e1e34.firebaseio.com/users/9700884367/child_details/8801502038/call_details/Call_Logs.json
@@ -132,6 +134,8 @@ public class View_Activity extends AppCompatActivity {
 
     }
 
+
+    //Retriving Messages
     void Get_Msgs(String parent_num, String num) {
 
 

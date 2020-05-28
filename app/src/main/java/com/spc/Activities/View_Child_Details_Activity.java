@@ -28,9 +28,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/**
- * Created by ITP on 3/24/2017.
- */
 
 public class View_Child_Details_Activity extends AppCompatActivity {
 

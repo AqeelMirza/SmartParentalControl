@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:orientation="vertical">
 
     <LinearLayout
@@ -17,13 +18,25 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="25dp"
             android:gravity="center"
-            android:text="Please check your details"
+            android:text="Welcome!"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:text="You can now connect with your Parent"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="#000"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="15dp">
 
             <EditText
                 android:id="@+id/getchild_parentphone"
@@ -31,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:ems="10"
-                android:hint="Parent phone number"
+                android:hint="Parent's phone number"
                 android:inputType="phone"
                 android:maxLength="10"
                 android:maxLines="1"
@@ -40,7 +53,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="15dp">
 
             <EditText
                 android:id="@+id/getchild_childphone"
@@ -56,12 +70,11 @@
 
         <Button
             android:id="@+id/check_parent_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:background="@color/colorPrimary"
-            android:padding="20dp"
-            android:text="Check for parent"
+            android:background="@drawable/rounded_button"
+            android:text="Verify"
             android:textColor="#fff" />
 
 
