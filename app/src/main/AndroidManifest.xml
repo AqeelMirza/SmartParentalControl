@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 
@@ -54,8 +54,13 @@
 
         <activity android:name=".Activities.View_Activity" />
 
-        <activity android:name=".Activities.First_Screen_Activity">
+        <activity
+            android:name=".Activities.First_Screen_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity
+            android:name=".Activities.SplashScreen_Activity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

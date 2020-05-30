@@ -85,6 +85,9 @@ public class MainActivity_DB extends AppCompatActivity {
                 if (name.isEmpty() || email.isEmpty() || password_str.isEmpty()) {
                     Toast.makeText(MainActivity_DB.this, "Fields cannot be empty. \nPlease check and try again.", Toast.LENGTH_SHORT).show();
 
+                }else if(password_str.trim().length()<8){
+                    Toast.makeText(MainActivity_DB.this, "Password length should be of Minimum 8 characters", Toast.LENGTH_SHORT).show();
+
                 } else {
 
 
@@ -104,7 +107,7 @@ public class MainActivity_DB extends AppCompatActivity {
     // Changing button text
     private void toggleButton() {
         if (TextUtils.isEmpty(userId)) {
-            btnSave.setText("Save");
+            btnSave.setText("Save and Add Child");
         } else {
             btnSave.setText("Update");
         }

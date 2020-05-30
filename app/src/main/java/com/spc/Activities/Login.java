@@ -66,7 +66,10 @@ public class Login extends AppCompatActivity {
 
                     Toast.makeText(Login.this, "Fields cannot be Empty. \n Please check and try again", Toast.LENGTH_SHORT).show();
 
-                } else {
+                } else if(password_str.trim().length()<8){
+                    Toast.makeText(Login.this, "Password length should be of Minimum 8 characters", Toast.LENGTH_SHORT).show();
+
+                }else {
 
                     loginService(phonestr, password_str);
 

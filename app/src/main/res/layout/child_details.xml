@@ -67,7 +67,7 @@
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_button2"
-                android:text="Create Parent"
+                android:text="Add Child"
                 android:textColor="#fff" />
 
             <Button
