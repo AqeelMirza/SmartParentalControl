@@ -67,7 +67,10 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Fields cannot be Empty. \n Please check and try again", Toast.LENGTH_SHORT).show();
 
                 } else if(password_str.trim().length()<8){
-                    Toast.makeText(Login.this, "Password length should be of Minimum 8 characters", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Phone Number & Password length should be of Minimum 8 characters", Toast.LENGTH_SHORT).show();
+
+                }else if(phonestr.trim().length()!=10){
+                    Toast.makeText(Login.this, "Phone Number should be of 10 digits", Toast.LENGTH_SHORT).show();
 
                 }else {
 

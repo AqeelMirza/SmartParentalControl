@@ -101,7 +101,9 @@ public class Child_Details_Activity extends AppCompatActivity {
                 if (name.isEmpty() || phone.isEmpty() || email.isEmpty()) {
                     Toast.makeText(Child_Details_Activity.this, "Please check the details and try again.", Toast.LENGTH_SHORT).show();
 
-                } else {
+                }else if (phone.trim().length() != 10) {
+                    Toast.makeText(Child_Details_Activity.this, "Phone Number should be of 10 digits", Toast.LENGTH_SHORT).show();
+                }  else {
 
                     HashMap<String, ArrayList<Call_Logs>> child_calls_map = new HashMap();
                     child_calls_map.put("Call_Logs", call_logsArrayList);
@@ -143,28 +145,34 @@ public class Child_Details_Activity extends AppCompatActivity {
                 phone = child_phone.getText().toString().trim();
                 email = child_email.getText().toString().trim();
 
-                //child_model = new Child(name, phone, email);
-                HashMap<String, ArrayList<Call_Logs>> child_calls_map = new HashMap();
-                child_calls_map.put("Call_Logs", call_logsArrayList);
+                if (name.isEmpty() || phone.isEmpty() || email.isEmpty()) {
+                    Toast.makeText(Child_Details_Activity.this, "Please check the details and try again.", Toast.LENGTH_SHORT).show();
 
-                HashMap<String, ArrayList<Messages>> child_msgs_map = new HashMap();
-                child_msgs_map.put("Messages_List", messagesArrayList);
+                } else if (phone.trim().length() != 10) {
+                    Toast.makeText(Child_Details_Activity.this, "Phone Number should be of 10 digits", Toast.LENGTH_SHORT).show();
+                } else {
+                    //child_model = new Child(name, phone, email);
+                    HashMap<String, ArrayList<Call_Logs>> child_calls_map = new HashMap();
+                    child_calls_map.put("Call_Logs", call_logsArrayList);
 
-                HashMap<String, ArrayList<Location_Model>> child_loc_map = new HashMap();
-                child_loc_map.put("Location_List", locationArrayList);
+                    HashMap<String, ArrayList<Messages>> child_msgs_map = new HashMap();
+                    child_msgs_map.put("Messages_List", messagesArrayList);
+
+                    HashMap<String, ArrayList<Location_Model>> child_loc_map = new HashMap();
+                    child_loc_map.put("Location_List", locationArrayList);
 
 
-                child_model = new Child(name, phone, email, child_calls_map, child_msgs_map, child_loc_map);
+                    child_model = new Child(name, phone, email, child_calls_map, child_msgs_map, child_loc_map);
 
-                //  mFirebaseDatabase.push().child(parent_name).child("child_details").child(name).setValue(name);
-                mFirebaseDatabase.child(parent_phone).child("child_details").child(phone).setValue(child_model);
+                    //  mFirebaseDatabase.push().child(parent_name).child("child_details").child(name).setValue(name);
+                    mFirebaseDatabase.child(parent_phone).child("child_details").child(phone).setValue(child_model);
 
-                Toast.makeText(Child_Details_Activity.this, "Child add successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Child_Details_Activity.this, "Child add successfully", Toast.LENGTH_SHORT).show();
 
-                Intent in = new Intent(Child_Details_Activity.this, Search_Child.class);
-                in.putExtra("parentphone", parent_phone);
-                startActivity(in);
-
+                    Intent in = new Intent(Child_Details_Activity.this, Search_Child.class);
+                    in.putExtra("parentphone", parent_phone);
+                    startActivity(in);
+                }
 
             }
         });

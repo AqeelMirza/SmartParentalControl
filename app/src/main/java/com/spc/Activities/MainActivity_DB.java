@@ -25,7 +25,7 @@ public class MainActivity_DB extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private TextView txtDetails;
-    private EditText inputName, inputEmail, password;
+    private EditText inputName, inputPhone, password;
     private Button btnSave;
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
@@ -43,7 +43,7 @@ public class MainActivity_DB extends AppCompatActivity {
 
         txtDetails = (TextView) findViewById(R.id.txt_user);
         inputName = (EditText) findViewById(R.id.name);
-        inputEmail = (EditText) findViewById(R.id.phone);
+        inputPhone = (EditText) findViewById(R.id.phone);
         password = (EditText) findViewById(R.id.parent_password);
         btnSave = (Button) findViewById(R.id.btn_save);
 
@@ -79,23 +79,26 @@ public class MainActivity_DB extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String name = inputName.getText().toString();
-                String email = inputEmail.getText().toString();
+                String phone_str = inputPhone.getText().toString();
                 String password_str = password.getText().toString().trim();
 
-                if (name.isEmpty() || email.isEmpty() || password_str.isEmpty()) {
+                if (name.isEmpty() || phone_str.isEmpty() || password_str.isEmpty()) {
                     Toast.makeText(MainActivity_DB.this, "Fields cannot be empty. \nPlease check and try again.", Toast.LENGTH_SHORT).show();
 
                 }else if(password_str.trim().length()<8){
                     Toast.makeText(MainActivity_DB.this, "Password length should be of Minimum 8 characters", Toast.LENGTH_SHORT).show();
+
+                }else if(phone_str.trim().length()!=10){
+                    Toast.makeText(MainActivity_DB.this, "Phone Number should be of 10 digits", Toast.LENGTH_SHORT).show();
 
                 } else {
 
 
                     // Check for already existed userId
                     if (TextUtils.isEmpty(userId)) {
-                        createUser(name, email, password_str);
+                        createUser(name, phone_str, password_str);
                     } else {
-                        updateUser(name, email);
+                        updateUser(name, phone_str);
                     }
                 }
             }
@@ -159,7 +162,7 @@ public class MainActivity_DB extends AppCompatActivity {
                 txtDetails.setText(user.name + ", " + user.email);
 
                 // clear edit text
-                inputEmail.setText("");
+                inputPhone.setText("");
                 inputName.setText("");
 
                 toggleButton();
